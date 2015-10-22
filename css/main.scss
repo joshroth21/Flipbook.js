@@ -1,0 +1,145 @@
+@import "/bower_components/bootstrap/dist/css/bootstrap.min.css";
+
+@mixin mpreset() {
+    margin: 0; padding: 0;
+}
+
+.container {
+    max-width: 850px;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    background: #555;
+    margin: 0 0 2em 0;
+    padding: 2em 0;
+    text-shadow: 1px 2px 0 rgba(#000,.5);
+    h1 {
+        @include mpreset();
+        color: #FFF;
+        font-weight: normal;
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+.flipbook-js {
+    text-align: center;
+
+.player-outer {
+    color: #FFF;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    .video-container {
+        position: relative;
+        z-index: -10;
+    }
+    .player-gradient {
+        background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.75) 47%, #000000 100%);
+        bottom: 0;
+        height: 17%;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+    }
+    .controls-outer {
+        // background: rgba(0,0,0,0.8);
+        color: #FFF;
+        bottom: 0px;
+        display: block;
+        //height: 10%;
+        left: 0%;
+        position: absolute;
+        transition: bottom 0.15s ease;
+        width: 100%;
+        padding: 1.5% 3%;
+        z-index: 20;
+        .controls-inner {
+            color: #FFF;
+            padding: 2% 0 0.5% 0;
+            position: relative;
+            width: 100%;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            .left, .center, .right {
+                display: inline-block;
+                height: auto;
+                width: 33.33%;
+            }
+            .left {
+                float: left;
+                text-align: left;
+            }
+            .center {
+                margin: 0 auto;
+                text-align: center;
+                width: 33%;
+            }
+            .right {
+                float: right;
+                text-align: right;
+                width: 33%;
+            }
+        }
+        .progress-outer {
+            cursor: pointer;
+            height: 20px;
+            position: relative;
+            .progress-bar {
+                background: rgba(255,255,255,0.40);
+                bottom: 0;
+                display: block;
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                transition: height 35ms ease-out;
+                .play-progress {
+                    background: rgba(255,255,255,0.60);
+                    display: block;
+                    height: 100%;
+                    width: 25%;
+                }
+            }
+            &:hover {
+                .progress-bar {
+                    height: 5px;
+                    .play-progress {
+                        background: #FFF;
+                    }
+                }
+            }
+        }
+    }
+    .btn {
+        @include mpreset();
+        display: inline-block;
+        color: #FFF;
+        margin: 0 10px;
+        transition: all 0.05s ease-out;
+        vertical-align: middle;
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+        &:hover {
+            transform: scale(1.1);
+            // &#more { transform: scale(1); }
+        }
+        &:active {
+            opacity: 0.75;
+            transform: scale(0.95);
+        }
+        svg {
+            alignment-baseline: middle;
+            fill: currentColor;
+            height: 17px;
+        }
+    }
+}
+
+}

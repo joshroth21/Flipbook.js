@@ -1,0 +1,114 @@
+@import url(/bower_components/bootstrap/dist/css/bootstrap.min.css);
+.container {
+  max-width: 850px; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px; }
+
+header {
+  background: #555;
+  margin: 0 0 2em 0;
+  padding: 2em 0;
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.5); }
+  header h1 {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center; }
+
+.flipbook-js {
+  text-align: center; }
+  .flipbook-js .player-outer {
+    color: #FFF;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden; }
+    .flipbook-js .player-outer .video-container {
+      position: relative;
+      z-index: -10; }
+    .flipbook-js .player-outer .player-gradient {
+      background-image: linear-gradient(-180deg, transparent 0%, rgba(0, 0, 0, 0.75) 47%, #000000 100%);
+      bottom: 0;
+      height: 17%;
+      width: 100%;
+      position: absolute;
+      z-index: 10; }
+    .flipbook-js .player-outer .controls-outer {
+      color: #FFF;
+      bottom: 0px;
+      display: block;
+      left: 0%;
+      position: absolute;
+      transition: bottom 0.15s ease;
+      width: 100%;
+      padding: 1.5% 3%;
+      z-index: 20; }
+      .flipbook-js .player-outer .controls-outer .controls-inner {
+        color: #FFF;
+        padding: 2% 0 0.5% 0;
+        position: relative;
+        width: 100%;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none; }
+        .flipbook-js .player-outer .controls-outer .controls-inner .left, .flipbook-js .player-outer .controls-outer .controls-inner .center, .flipbook-js .player-outer .controls-outer .controls-inner .right {
+          display: inline-block;
+          height: auto;
+          width: 33.33%; }
+        .flipbook-js .player-outer .controls-outer .controls-inner .left {
+          float: left;
+          text-align: left; }
+        .flipbook-js .player-outer .controls-outer .controls-inner .center {
+          margin: 0 auto;
+          text-align: center;
+          width: 33%; }
+        .flipbook-js .player-outer .controls-outer .controls-inner .right {
+          float: right;
+          text-align: right;
+          width: 33%; }
+      .flipbook-js .player-outer .controls-outer .progress-outer {
+        cursor: pointer;
+        height: 20px;
+        position: relative; }
+        .flipbook-js .player-outer .controls-outer .progress-outer .progress-bar {
+          background: rgba(255, 255, 255, 0.4);
+          bottom: 0;
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          transition: height 35ms ease-out; }
+          .flipbook-js .player-outer .controls-outer .progress-outer .progress-bar .play-progress {
+            background: rgba(255, 255, 255, 0.6);
+            display: block;
+            height: 100%;
+            width: 25%; }
+        .flipbook-js .player-outer .controls-outer .progress-outer:hover .progress-bar {
+          height: 5px; }
+          .flipbook-js .player-outer .controls-outer .progress-outer:hover .progress-bar .play-progress {
+            background: #FFF; }
+    .flipbook-js .player-outer .btn {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      color: #FFF;
+      margin: 0 10px;
+      transition: all 0.05s ease-out;
+      vertical-align: middle; }
+      .flipbook-js .player-outer .btn:first-child {
+        margin-left: 0; }
+      .flipbook-js .player-outer .btn:last-child {
+        margin-right: 0; }
+      .flipbook-js .player-outer .btn:hover {
+        transform: scale(1.1); }
+      .flipbook-js .player-outer .btn:active {
+        opacity: 0.75;
+        transform: scale(0.95); }
+      .flipbook-js .player-outer .btn svg {
+        alignment-baseline: middle;
+        fill: currentColor;
+        height: 17px; }

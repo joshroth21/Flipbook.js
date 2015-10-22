@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Flipbook.js</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Flipbook.js</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="flipbook-js">
+                    <div class="player-outer">
+                        <div class="player-gradient"></div>
+                        <div class="controls-outer">
+                            <div class="progress-outer">
+                                <div class="progress-bar">
+                                    <div class="play-progress"></div>
+                                </div>
+                            </div>
+                            <div class="controls-inner">
+                                <div class="left">
+                                    <a href="#" class="btn" id="frame-backward">
+                                        <!-- @import "svg/i-frameleft.svg" -->
+                                    </a>
+                                    <a href="#" class="btn" id="play-pause">
+                                        <!-- @import "svg/i-play.svg" -->
+                                    </a>
+                                    <a href="#" class="btn" id="frame-forward">
+                                        <!-- @import "svg/i-frameright.svg" -->
+                                    </a>
+                                </div>
+                                <div class="right">
+                                    <a href="#" class="btn" id="fullscreen">
+                                        <!-- @import "svg/i-fullscreen.svg" -->
+                                    </a>
+                                    <a href="#" class="btn" id="more">
+                                        <!-- @import "svg/i-more.svg" -->
+                                    </a>
+                                </div>
+                                <div class="center">
+                                    <a href="#" class="btn" id="keyleft">
+                                        <!-- @import "svg/i-keyleft.svg" -->
+                                    </a>
+                                    <a href="#" class="btn" id="keyframe">
+                                        <!-- @import "svg/i-keyframe.svg" -->
+                                    </a>
+                                    <a href="#" class="btn" id="keyright">
+                                        <!-- @import "svg/i-keyright.svg" -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <video id="video" src="/mov/bunny-clip-timecode.mov" preload="auto" width="720" allowfullscreen />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
