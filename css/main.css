@@ -86,7 +86,7 @@ header {
             background: rgba(255, 255, 255, 0.6);
             display: block;
             height: 100%;
-            width: 25%; }
+            width: 0%; }
         .flipbook-js .player-outer .controls-outer .progress-outer:hover .progress-bar {
           height: 5px; }
           .flipbook-js .player-outer .controls-outer .progress-outer:hover .progress-bar .play-progress {
@@ -108,7 +108,17 @@ header {
       .flipbook-js .player-outer .btn:active {
         opacity: 0.75;
         transform: scale(0.95); }
+      .flipbook-js .player-outer .btn.active {
+        opacity: 0.5; }
       .flipbook-js .player-outer .btn svg {
         alignment-baseline: middle;
         fill: currentColor;
         height: 17px; }
+  .flipbook-js #controls-outer {
+    position: absolute;
+    bottom: -17%;
+    height: 100%;
+    width: 100%;
+    transition: all 100ms ease-in; }
+    .flipbook-js #controls-outer.active {
+      bottom: 0; }
