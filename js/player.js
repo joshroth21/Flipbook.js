@@ -1,15 +1,21 @@
 var supportsVideo = !!document.createElement('video').canPlayType;
 // Get the elements
+var playerWrap = document.getElementById('flipbook-js');
 var playerOuter = document.getElementById('player-outer');
-var playerControls = document.getElementById('controls-outer');
+var playerControls = document.getElementById('controls-wrap');
+var controlsOuter = document.getElementById('controls-outer');
+var controlsInner = document.getElementById('controls-inner');
 var video = document.getElementById('video');
 var playpause = document.getElementById('play-pause');
-var bigplay = document.getElementById('bigplay');
+var playIcon = document.getElementById('i-play');
+var pauseIcon = document.getElementById('i-pause');
+var bigplay = document.getElementById('big-play');
+var bigPlayWrap = document.getElementById('big-play-wrap');
 var frameforward = document.getElementById('frame-forward');
 var framebackward = document.getElementById('frame-backward');
 var loop = document.getElementById('loop');
 var fullscreen = document.getElementById('fullscreen');
-var indicator = document.getElementById('indicator');
+// var indicator = document.getElementById('indicator');
 var addKeyFrameBtn = document.getElementById('keyframe');
 // var keyList = document.getElementById('keyframe-list');
 var keyTicks = document.getElementById('keyframe-ticks');
@@ -21,7 +27,7 @@ var keyForwardBtn = document.getElementById('keyright');
 var keyFrames = [];
 // Show/hide controls
 playerOuter.addEventListener("mouseenter", function() {
-	if (playerControls.className === '') {
+	if (playerControls.className === '' && bigPlayWrap.className != 'visible') {
 		playerControls.className = playerControls.className + 'active';
 	}
 });
@@ -31,37 +37,31 @@ playerOuter.addEventListener("mouseleave", function() {
 	}
 });
 // ACTIONS
-function showHide(element, timeout) {
+/* function showHide(element, timeout) {
 	element.className = 'visible';
 	setTimeout(function() {
 		element.className = 'hidden';
 	}, timeout);
-}
+} */
 function bigPlay() {
-	if (video.paused || video.ended) {
-		bigplay.innerHTML = "||";
-		showHide(bigplay, 250);
+	if (video.paused) {
+		video.play();
+		bigPlayWrap.setAttribute('class','hidden');
 	} else {
-		bigplay.innerHTML = ">";
-		showHide(bigplay, 250);
+		video.pause();
+		bigPlayWrap.setAttribute('class','visible');
 	}
 }
 function playPause() {
 	// Check video state
 	if (video.paused || video.ended) {
 		video.play();
-		// playpause.innerHTML = "Pause";
 	} else {
 		video.pause();
-		// playpause.innerHTML = "Play";
 	}
 	// Reset play speed
 	if (video.playbackRate !== 1) {
 		video.playbackRate = 1;
-	}
-	// Always hide speed indicator
-	if(indicator.className === 'visible') {
-		indicator.className = 'hidden';
 	}
 }
 function frameForward(frames) {
@@ -70,8 +70,6 @@ function frameForward(frames) {
 	var framesMoved = oneFrame * frames;
 	if(video.paused){
 		video.currentTime += framesMoved;
-		indicator.innerHTML = "+";
-		showHide(indicator, 1000);
 	} else {
 		video.pause();
 	}
@@ -82,8 +80,6 @@ function frameBackward(frames) {
 	var framesMoved = oneFrame * frames;
 	if(video.paused){
 		video.currentTime -= framesMoved;
-		indicator.innerHTML = "-";
-		showHide(indicator, 1000);
 	} else {
 		video.pause();
 	}
@@ -145,12 +141,12 @@ function addKeyFrame() {
 function toggleLoop() {
 	if(!video.loop) {
 		video.loop = true;
-		loop.className = 'active';
+		loop.className = 'btn inactive';
 	} else {
 		video.loop = false;
 	}
 	if (loop.className === 'btn') {
-		loop.className = 'btn active';
+		loop.className = 'btn inactive';
 	} else {
 		loop.className = 'btn';
 	}
@@ -175,19 +171,17 @@ function jogForward() {
 	} else {
 		video.playbackRate += 1;
 	}
-	indicator.innerHTML = "x" + video.playbackRate;
-	indicator.className = 'visible';
 }
 if (supportsVideo) {
 	// Hide the default controls
 	video.controls = false;
 	// Key actions
-	document.addEventListener("keydown", function (event) {
+	playerOuter.addEventListener("keydown", function (event) {
 	    if (event.keyCode === 32 || event.keyCode === 75) {
 	        // Spacebar, K key
 			event.preventDefault();
 	        playPause();
-	        bigPlay();
+	        // bigPlay();
 	    } else if (event.keyCode === 37 || event.keyCode === 189) {
 			event.preventDefault();
 	       // left arrow, - key
@@ -218,6 +212,14 @@ if (supportsVideo) {
 				keyForward();
 	    }
 	});
+	// Big play button
+	bigPlayWrap.addEventListener('click', function() {
+		bigPlay();
+	});
+	video.addEventListener('click', function() {
+		playPause();
+		// bigPlay();
+	});
 	// Play/pause button
 	playpause.addEventListener('click', function() {
 		playPause();
@@ -246,12 +248,19 @@ if (supportsVideo) {
 	   if (!progress.getAttribute('max')) { progress.setAttribute('max', video.duration); }
 	   progress.value = video.currentTime;
 	   progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
-	});
+	   if (video.paused || video.ended) {
+		   playIcon.setAttribute('class','visible');
+		   pauseIcon.setAttribute('class','hidden');
+		} else  {
+			pauseIcon.setAttribute('class','visible');
+		   	playIcon.setAttribute('class','hidden');
+	   }
+   });
 	progressOuter.addEventListener('click', function(e) {
-	   var left = progress.offsetLeft;
+	   var left = playerOuter.offsetLeft + progressBar.offsetLeft;
 	   var pos = (e.pageX - left) / progress.offsetWidth;
-	   console.log(e.pageX);
-	   video.currentTime = pos * video.duration;
+	   var time = pos * video.duration
+	   video.currentTime = time;
 	});
 	// Keyframes
 	keyForwardBtn.addEventListener('click', function() {
