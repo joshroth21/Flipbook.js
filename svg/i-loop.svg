@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>i-loop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="i-loop" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <path d="M26.6666667,3.61038961 L26.6666667,0 L3.33333333,0 L3.33333333,4 L3.33333333,10.2727273 L8.33333333,10.2727273 L8.33333333,5 L8.33333333,5 L20.1805556,5 L24.1666667,1.27272727 L26.6666667,3.61038961 Z M5.83333333,15.7272727 L11.6666667,10.2727273 L0,10.2727273 L5.83333333,15.7272727 Z" id="Triangle-1" sketch:type="MSShapeGroup"></path>
+            <path d="M8.75,15 L21.6666667,15 L21.6666667,8.72727273 L26.6666667,8.72727273 L26.6666667,15.5 L26.6666667,15.5 L26.6666667,20 L3.33333333,20 L3.33333333,15.3896104 L5.83333333,17.7272727 L8.75,15 Z M24.1666667,3.27272727 L30,8.72727273 L18.3333333,8.72727273 L24.1666667,3.27272727 Z" id="Path" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
