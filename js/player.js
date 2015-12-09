@@ -348,11 +348,11 @@ if (supportsVideo) {
 			pauseIcon.setAttribute('class','visible');
 		   	playIcon.setAttribute('class','hidden');
 	   }
-   });
+   	});
 	progressOuter.addEventListener('click', function(e) {
 	   var left = playerOuter.offsetLeft + progressBar.offsetLeft;
 	   var pos = (e.pageX - left) / progress.offsetWidth;
-	   var time = pos * video.duration
+	   var time = pos * video.duration;
 	   video.currentTime = time;
 	});
 	// Show/hide hover
