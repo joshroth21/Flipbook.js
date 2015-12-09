@@ -190,6 +190,22 @@ header {
                     width: 0%;
                 }
             }
+            .keyframes-outer {
+                bottom: 0;
+                display: block;
+                height: 5px;
+                position: absolute;
+                z-index: 30;
+                width: 100%;
+                div {
+                    background-color: #000;
+                    bottom: 0;
+                    display: block;
+                    height: 3px;
+                    position: absolute;
+                    width: 2px;
+                }
+            }
             &:hover {
                 .progress-bar {
                     background-color: rgba(255,255,255,0.50);
@@ -198,6 +214,12 @@ header {
                     .play-progress {
                         background: #FFF;
                         border-right: 1px solid rgba(0,0,0,0.50);
+                    }
+                }
+                .keyframes-outer {
+                    height: 15px;
+                    div {
+                        height: 15px;
                     }
                 }
             }

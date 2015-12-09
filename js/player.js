@@ -19,9 +19,8 @@ var timecodeBtn = document.getElementById('time');
 var timecode = document.getElementById('timecode');
 var fullscreenBtn = document.getElementById('fullscreen');
 // var indicator = document.getElementById('indicator');
+var keyframesOuter = document.getElementById('keyframes-outer');
 var addKeyFrameBtn = document.getElementById('keyframe');
-// var keyList = document.getElementById('keyframe-list');
-var keyTicks = document.getElementById('keyframe-ticks');
 var progressOuter = document.getElementById('progress-outer');
 var progress = document.getElementById('progress');
 var progressBar = document.getElementById('progress-bar');
@@ -191,10 +190,10 @@ function addKeyFrame() {
 	// Add keyframe tick to timeline
 	var newKeyTick =  document.createElement("div");
 	var newKeyTickOffset = (k / progress.max) * 100; // Calculate left margin percent
-	newKeyTick.style.marginLeft  = newKeyTickOffset.toFixed(3) + '%';
-	newKeyTick.style.marginLeft  = newKeyTickOffset.toFixed(3) + '%';
+	newKeyTick.style.left  = newKeyTickOffset.toFixed(3) + '%';
+	newKeyTick.style.left  = newKeyTickOffset.toFixed(3) + '%';
 	newKeyTick.dataset.timecode = k;
-	keyTicks.appendChild(newKeyTick);
+	keyframesOuter.appendChild(newKeyTick);
 }
 function toggleLoop() {
 	if(!video.loop) {
