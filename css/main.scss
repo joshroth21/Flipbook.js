@@ -55,6 +55,7 @@ header {
         text-align: center;
         width: 100%;
         z-index: 20;
+        visibility: visible;
         .big-play {
             background-color: rgba(0,0,0,0.75);
             border-radius: 5px;
@@ -144,12 +145,6 @@ header {
                 text-align: right;
                 width: 33%;
             }
-            .hidden {
-                display: none;
-            }
-            .visible {
-                display: block;
-            }
         }
         .progress-outer {
             cursor: pointer;
@@ -195,6 +190,7 @@ header {
         margin: 0 10px;
         transition: all 0.05s ease-out;
         vertical-align: middle;
+        visibility: visible;
         &:first-child { margin-left: 0; }
         &:last-child { margin-right: 0; }
         &:hover {
@@ -232,6 +228,15 @@ header {
     &.active {
         bottom: 0;
     }
+}
+
+.hidden {
+    display: none;
+    visibility: hidden !important;
+}
+.visible {
+    display: block;
+    visibility: visible !important;
 }
 
 }
