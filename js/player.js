@@ -15,6 +15,8 @@ var frameforward = document.getElementById('frame-forward');
 var framebackward = document.getElementById('frame-backward');
 var loop = document.getElementById('loop');
 var fullscreen = document.getElementById('fullscreen');
+var timecodeBtn = document.getElementById('time');
+var timecode = document.getElementById('timecode');
 // var indicator = document.getElementById('indicator');
 var addKeyFrameBtn = document.getElementById('keyframe');
 // var keyList = document.getElementById('keyframe-list');
@@ -151,6 +153,9 @@ function toggleLoop() {
 		loop.className = 'btn';
 	}
 }
+function updateTimecode() {
+	timecode.innerHTML = getCurrentFrame();
+}
 function toggleFullScreen() {
 	if (video.requestFullscreen) {
 	  video.requestFullscreen();
@@ -236,6 +241,17 @@ if (supportsVideo) {
 	loop.addEventListener('click', function() {
 		toggleLoop();
 	});
+	// Timecode
+	timecodeBtn.addEventListener('click', function() {
+		if(timecode.className === 'timecode visible') { // DRY THIS UP
+			timecode.className = 'timecode hidden';
+			timecodeBtn.className = 'btn inactive';
+		} else {
+			timecode.className = 'timecode visible';
+			timecodeBtn.className = 'btn';
+		}
+	});
+	window.setInterval(updateTimecode, 24);
 	// Fullscreen button
 	fullscreen.addEventListener('click', function() {
 		toggleFullScreen();
