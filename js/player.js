@@ -13,11 +13,11 @@ var bigplay = document.getElementById('big-play');
 var bigPlayWrap = document.getElementById('big-play-wrap');
 var frameforward = document.getElementById('frame-forward');
 var framebackward = document.getElementById('frame-backward');
-var loop = document.getElementById('loop');
-var fullscreen = document.getElementById('fullscreen');
+var loopBtn = document.getElementById('loop');
 var audioBtn = document.getElementById('audio');
 var timecodeBtn = document.getElementById('time');
 var timecode = document.getElementById('timecode');
+var fullscreenBtn = document.getElementById('fullscreen');
 // var indicator = document.getElementById('indicator');
 var addKeyFrameBtn = document.getElementById('keyframe');
 // var keyList = document.getElementById('keyframe-list');
@@ -144,14 +144,16 @@ function addKeyFrame() {
 function toggleLoop() {
 	if(!video.loop) {
 		video.loop = true;
-		loop.className = 'btn inactive';
+		loopBtn.className = 'btn inactive';
 	} else {
 		video.loop = false;
 	}
-	if (loop.className === 'btn') {
-		loop.className = 'btn inactive';
+	if (loopBtn.className === 'btn') {
+		loopBtn.className = 'btn inactive';
 	} else {
-		loop.className = 'btn';
+		loopBtn.className = 'btn';
+	}
+}
 function setVolume(v) {
 	if(!v) {
 		if(video.volume === 0) {
@@ -248,7 +250,7 @@ if (supportsVideo) {
 		frameBackward(1);
 	});
 	// Loop button
-	loop.addEventListener('click', function() {
+	loopBtn.addEventListener('click', function() {
 		toggleLoop();
 	});
 	// Audio
@@ -274,7 +276,7 @@ if (supportsVideo) {
 	});
 	window.setInterval(updateTimecode, 24);
 	// Fullscreen button
-	fullscreen.addEventListener('click', function() {
+	fullscreenBtn.addEventListener('click', function() {
 		toggleFullScreen();
 	});
 	// Progress bar
