@@ -15,6 +15,7 @@ var frameforward = document.getElementById('frame-forward');
 var framebackward = document.getElementById('frame-backward');
 var loop = document.getElementById('loop');
 var fullscreen = document.getElementById('fullscreen');
+var audioBtn = document.getElementById('audio');
 var timecodeBtn = document.getElementById('time');
 var timecode = document.getElementById('timecode');
 // var indicator = document.getElementById('indicator');
@@ -151,6 +152,15 @@ function toggleLoop() {
 		loop.className = 'btn inactive';
 	} else {
 		loop.className = 'btn';
+function setVolume(v) {
+	if(!v) {
+		if(video.volume === 0) {
+			video.volume = 1;
+		} else {
+			video.volume = 0;
+		}
+	} else {
+		video.volume = v;
 	}
 }
 function updateTimecode() {
@@ -240,6 +250,17 @@ if (supportsVideo) {
 	// Loop button
 	loop.addEventListener('click', function() {
 		toggleLoop();
+	});
+	// Audio
+	audioBtn.addEventListener('click', function() {
+		setVolume();
+	});
+	video.addEventListener('volumechange', function() {
+	   if(video.volume === 1) {
+		   audioBtn.className = 'btn';
+	   } else if(video.volume === 0) {
+		   audioBtn.className = 'btn inactive';
+	   }
 	});
 	// Timecode
 	timecodeBtn.addEventListener('click', function() {
