@@ -152,6 +152,29 @@ header {
             position: relative;
             progress[value]::-webkit-progress-value { background-color: rgba(255,255,255,0.90); border-right: 1px solid rgba(0,0,0,0.25); }
             progress[value]::-webkit-progress-bar { background-color: rgba(255,255,255,0.25); }
+            .progress-hover {
+                background: rgba(0,0,0,0.60);
+                border-radius: 5px;
+                color: #FFF;
+                display: block;
+                font-family: monospace;
+                font-size: 0.8em;
+                font-weight: normal;
+                padding: 0.5% 1%;
+                position: absolute;
+                bottom: 100%;
+                left: 0%;
+                z-index: 30;
+                visibility: hidden;
+            }
+            .progress-left {
+                @extend .progress-hover;
+                background-color: transparent;
+                color: #000;
+                left: 0;
+                bottom: 0;
+                visibility: visible;
+            }
             .progress-bar {
                 background-color: rgba(255,255,255,0.25);
                 bottom: 0;

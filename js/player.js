@@ -25,6 +25,7 @@ var keyTicks = document.getElementById('keyframe-ticks');
 var progressOuter = document.getElementById('progress-outer');
 var progress = document.getElementById('progress');
 var progressBar = document.getElementById('progress-bar');
+var progressHover = document.getElementById('progress-hover');
 var keyBackBtn = document.getElementById('keyleft');
 var keyForwardBtn = document.getElementById('keyright');
 var keyFrames = [];
@@ -355,6 +356,22 @@ if (supportsVideo) {
 	   var time = pos * video.duration
 	   video.currentTime = time;
 	});
+	// Show/hide hover
+	progressOuter.addEventListener('mouseenter', function(e) {
+		showHide(progressHover);
+	});
+	progressOuter.addEventListener('mouseleave', function(e) {
+		showHide(progressHover);
+	});
+	progressOuter.addEventListener('mousemove', function(e) {
+		// Update current frame in hover
+		progressHover.innerHTML = getTimelineFrame(e.pageX);
+		// Make hover follow mouse
+		var left = playerOuter.offsetLeft + progressBar.offsetLeft;
+ 	   	var pos = (e.pageX - left) / progress.offsetWidth;
+		var css = (Math.floor(pos * 100) - 1.5) + '%';
+		progressHover.style.left = css;
+	})
 	// Keyframes
 	keyForwardBtn.addEventListener('click', function() {
 		keyForward();
