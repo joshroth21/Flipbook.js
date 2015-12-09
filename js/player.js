@@ -40,12 +40,66 @@ playerOuter.addEventListener("mouseleave", function() {
 	}
 });
 // ACTIONS
-/* function showHide(element, timeout) {
-	element.className = 'visible';
-	setTimeout(function() {
-		element.className = 'hidden';
-	}, timeout);
-} */
+function hasClass(e, c) {
+	if(e.className.search(c) >= 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function isVisible(element) {
+	var vis = getComputedStyle(progressHover).getPropertyValue('visibility');
+	if(vis === 'hidden') {
+		return false;
+	} else {
+		return true;
+	}
+}
+function toggleClass(e, c) {
+	var arrayClass = e.className.split(' ');
+	var index = arrayClass.indexOf(c);
+	if(hasClass(e,c)) {
+		if (index > -1) {
+			arrayClass.splice(index,1);
+		}
+	} else if(!hasClass(e,c)) {
+		arrayClass.push(c);
+	}
+	var newClass = arrayClass.join(' ');
+	e.className = newClass;
+}
+function addClass(e, c) {
+	var arrayClass = e.className.split(' ');
+	if(!hasClass(e,c)) {
+		arrayClass.push(c);
+	}
+	var newClass = arrayClass.join(' ');
+	e.className = newClass;
+}
+function showHide(element) {
+	var initClass = element.className;
+	var vis = isVisible(element);
+	if(vis) {
+		addClass(element,'visible');
+	} else {
+		addClass(element,'hidden');
+	}
+	toggleClass(element, 'hidden');
+	toggleClass(element, 'visible');
+}
+function getCurrentFrame() {
+	var f = Math.floor(video.currentTime * 24).toString();
+	while (f.length < 3) {
+		f = "0" + f;
+	};
+	return f;
+}
+function getTimelineFrame(x) {
+	var left = playerOuter.offsetLeft + progressBar.offsetLeft;
+	var pos = (x - left) / progress.offsetWidth;
+	var time = pos * video.duration;
+	return Math.floor(time * 24);
+}
 function bigPlay() {
 	if (video.paused) {
 		video.play();
