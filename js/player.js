@@ -11,6 +11,7 @@ var playIcon = document.getElementById('i-play');
 var pauseIcon = document.getElementById('i-pause');
 var bigplay = document.getElementById('big-play');
 var bigPlayWrap = document.getElementById('big-play-wrap');
+var loaderWrap = document.getElementById('loader-wrap');
 var frameforward = document.getElementById('frame-forward');
 var framebackward = document.getElementById('frame-backward');
 var loopBtn = document.getElementById('loop');
@@ -246,6 +247,11 @@ function jogForward() {
 if (supportsVideo) {
 	// Hide the default controls
 	video.controls = false;
+	// Video loading indicator
+	video.addEventListener("loadedmetadata", function() {
+        showHide(loaderWrap);
+        showHide(bigPlayWrap);
+	});
 	// Key actions
 	playerOuter.addEventListener("keydown", function (event) {
 	    if (event.keyCode === 32 || event.keyCode === 75) {
