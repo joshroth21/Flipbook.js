@@ -47,6 +47,27 @@ header {
     &:focus {
         outline: none;
     }
+    #loader-wrap {
+        background-color: rgba(#000,0.5);
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 30;
+        visibility: visible;
+        span {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            top: 45%;
+            transition: all 0.05s ease-out;
+            text-align: center;
+            width: 100%;
+        }
+    }
     #big-play-wrap {
         background-color: transparent;
         cursor: pointer;
@@ -100,9 +121,9 @@ header {
         user-select: none;
     }
     .player-gradient {
-        background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.20) 20%, rgba(0,0,0,0.65) 40%, #000000 100%);
+        background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.65) 40%, #000000 100%);
         bottom: 0;
-        height: 17%;
+        height: 15%;
         width: 100%;
         position: absolute;
         z-index: 10;
@@ -222,6 +243,16 @@ header {
                     height: 15px;
                     div {
                         height: 15px;
+                        &::before {
+                            background-color: #000;
+                            content: "";
+                            display: n;
+                            height: 5px;
+                            width: 10px;
+                            left: 0;
+                            top: -5px;
+                            position: absolute;
+                        }
                     }
                 }
             }
