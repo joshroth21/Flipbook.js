@@ -30,8 +30,12 @@ header {
 
 .flipbook-js {
     text-align: center;
+    max-width: 100%;
     width: auto;
     z-index: 100;
+    video { 
+        max-width: 100%;
+    }
     video::-webkit-media-controls { display:none !important; }
 
 .player-outer {
