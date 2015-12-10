@@ -49,7 +49,7 @@ function hasClass(e, c) {
 	}
 }
 function isVisible(element) {
-	var vis = getComputedStyle(progressHover).getPropertyValue('visibility');
+	var vis = getComputedStyle(element).getPropertyValue('visibility');
 	if(vis === 'hidden') {
 		return false;
 	} else {
@@ -104,10 +104,10 @@ function getTimelineFrame(x) {
 function bigPlay() {
 	if (video.paused) {
 		video.play();
-		bigPlayWrap.setAttribute('class','hidden');
+		showHide(bigPlayWrap);
 	} else {
 		video.pause();
-		bigPlayWrap.setAttribute('class','visible');
+		showHide(bigPlayWrap);
 	}
 }
 function playPause() {
@@ -326,11 +326,11 @@ if (supportsVideo) {
 	});
 	// Timecode
 	timecodeBtn.addEventListener('click', function() {
-		if(timecode.className === 'timecode visible') { // DRY THIS UP
-			timecode.className = 'timecode hidden';
+		if(isVisible(timecode)) { // DRY THIS UP
+			showHide(timecode);
 			timecodeBtn.className = 'btn inactive';
 		} else {
-			timecode.className = 'timecode visible';
+			showHide(timecode);
 			timecodeBtn.className = 'btn';
 		}
 	});
@@ -350,10 +350,13 @@ if (supportsVideo) {
 	   if (video.paused || video.ended) {
 		   playIcon.setAttribute('class','visible');
 		   pauseIcon.setAttribute('class','hidden');
-		} else  {
+		} else {
 			pauseIcon.setAttribute('class','visible');
 		   	playIcon.setAttribute('class','hidden');
 	   }
+	   if (video.ended) {
+			showHide(bigPlayWrap);
+		}
    	});
 	progressOuter.addEventListener('click', function(e) {
 	   var left = playerOuter.offsetLeft + progressBar.offsetLeft;
