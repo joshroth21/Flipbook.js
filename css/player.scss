@@ -205,17 +205,19 @@
     }
     .btn {
         @include mpreset();
+        background-color: transparent;
         display: inline-block;
         color: #FFF;
         margin: 0 5px;
         transition: all 0.05s ease-out;
+        line-height: 1em;
+        outline: none;
         vertical-align: middle;
         visibility: visible;
         &:first-child { margin-left: 0; }
         &:last-child { margin-right: 0; }
         &:hover {
             transform: scale(1.1);
-            // &#more { transform: scale(1); }
         }
         &:active {
             opacity: 0.75;
@@ -228,6 +230,7 @@
             alignment-baseline: middle;
             fill: currentColor;
             height: 17px;
+            vertical-align: middle;
         }
         &#loop {
             transition: all 300ms ease-out;
