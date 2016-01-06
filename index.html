@@ -1,15 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flipbook.js</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
     <header>
         <div class="row">
             <div class="col-sm-12">
-                <h1>Flipbook.js</h1>
+                <h1>Flipbook<span>.js</span></h1>
+                <h2>Animation Web Player</h2>
             </div>
         </div>
     </header>
@@ -193,16 +198,50 @@
             </div>
         </div>
         <script type="text/javascript" src="js/player.js"></script>
+        <div class="attr">'Big Buck Bunny' courtesy of <a href="http://www.blender.org/" target="_blank">Blender Foundation</a></div>
     </div>
-    <div class="container">
+    <div class="container body">
         <div class="row">
             <div class="col-sm-6">
-                <h3>What's this?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat libero animi neque consequatur accusantium tenetur iure, debitis natus! Qui, ex beatae. Repellat obcaecati dicta atque quod ea modi cum, animi.</p>
+                <h3>What&rsquo;s this?</h3>
+                <p>
+                    Every animator needs a demo reel and, more importantly, somewhere to put it online. Youtube and Vimeo are pretty great, but they&rsquo;re not the best solution for playing animation.
+                </p>
+                <p>
+                    As an animator you want to flip through keyframes and savor each frame one at a time. Flipbook.js is made specifically to playback animation!
+                </p>
+                </p>
+                <p>
+                    Here are some of the cool things you can do with Flipbook.js:
+                    <ul>
+                        <li>Step through individual <strong>frames</strong></li>
+                        <li>Set <strong>keyframes</strong> and skip between them</li>
+                        <li><strong>Loop</strong> the video</li>
+                    </ul>
+                </p>
             </div>
             <div class="col-sm-6">
-                <h3>How does it work?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat libero animi neque consequatur accusantium tenetur iure, debitis natus! Qui, ex beatae. Repellat obcaecati dicta atque quod ea modi cum, animi.</p>
+                <h3>How&rsquo;s it work?</h3>
+                <p>Flipbook.js has a bunch of keyboard shortcuts set-up to speed up your workflow:</p>
+                <ul class="list-unstyled" id="shortcuts">
+                    <li><div class="keyboard">Spacebar</div> Play/pause video</li>
+                    <li><div class="keyboard">L</div> Turn looping on/off</li>
+                    <li><div class="keyboard"><i class="fa fa-arrow-right"></i></div> Go to next frame</li>
+                    <li><div class="keyboard"><i class="fa fa-arrow-left"></i></div> Go to previous frame</li>
+                    <li><div class="keyboard">F</div> Set a keyframe</li>
+                    <li><div class="keyboard"><i class="fa fa-arrow-up"></i></div> Skip to next keyframe</li>
+                    <li><div class="keyboard"><i class="fa fa-arrow-down"></i></div> Skip to previous keyframe</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <span class="left">Made by <a href="http://www.joshroth.me">Josh Roth</a></span>
+                    <span class="right"><i class="fa fa-github"></i> <a href="https://github.com/joshroth21/Flipbook.js">View on Github</a></span>
+                </div>
             </div>
         </div>
     </div>
