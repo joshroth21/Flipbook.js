@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-=======
->>>>>>> origin/master
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,15 +10,22 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-    <header>
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>Flipbook<span>.js</span></h1>
-                <h2>Animation Web Player</h2>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Flipbook<span>.js</span></h1>
+                    <h2>Animation Web Player</h2>
+                </div>
             </div>
         </div>
-    </header>
-    <div class="hero">
+    </div>
+    <div class="hero visible-xs">
+        <h3>Whoops...</h3>
+        <p>Sorry about that, I'm still working on the mobile version of the player. <i class="fa fa-frown-o"></i></p>
+        <p>Please visit the page on a desktop or tablet to view the player.</p>
+    </div>
+    <div class="hero hidden-xs">
         <div class="flipbook-js" id="flipbook-js">
             <div class="player-outer" id="player-outer" tabindex="1">
                 <div class="hidden" id="big-play-wrap">
@@ -206,7 +210,7 @@
     </div>
     <div class="container body">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-xs-12 col-sm-6">
                 <h3>What&rsquo;s this?</h3>
                 <p>
                     Every animator needs a demo reel and, more importantly, somewhere to put it online. Youtube and Vimeo are pretty great, but they&rsquo;re not the best solution for playing animation.
@@ -217,14 +221,14 @@
                 </p>
                 <p>
                     Here are some of the cool things you can do with Flipbook.js:
-                    <ul>
-                        <li>Step through individual <strong>frames</strong></li>
-                        <li>Set <strong>keyframes</strong> and skip between them</li>
-                        <li><strong>Loop</strong> the video</li>
+                    <ul class="fa-ul" id="features">
+                        <li><i class="fa fa-li fa-film"></i>Step through individual <strong>frames</strong></li>
+                        <li><i class="fa fa-li fa-key"></i> Set <strong>keyframes</strong> and skip between them</li>
+                        <li><i class="fa fa-li fa-undo"></i> <strong>Loop</strong> the video</li>
                     </ul>
                 </p>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-12 col-sm-6">
                 <h3>How&rsquo;s it work?</h3>
                 <p>Flipbook.js has a bunch of keyboard shortcuts set-up to speed up your workflow:</p>
                 <ul class="list-unstyled" id="shortcuts">
@@ -242,9 +246,11 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 text-center">
-                    <span class="left">Made by <a href="http://www.joshroth.me">Josh Roth</a></span>
-                    <span class="right"><i class="fa fa-github"></i> <a href="https://github.com/joshroth21/Flipbook.js">View on Github</a></span>
+                <div class="col-xs-12 col-sm-6 text-right">
+                    Made by <a href="http://www.joshroth.me">Josh Roth</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 text-left">
+                    <i class="fa fa-github"></i> <a href="https://github.com/joshroth21/Flipbook.js">View on Github</a>
                 </div>
             </div>
         </div>

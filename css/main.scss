@@ -19,7 +19,7 @@ body {
 
 h1, h2, h3, h4, h5 { font-family: 'Luckiest Guy', 'Lato', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 900; }
 
-header {
+.header {
     background: $velvet;
     border-bottom: 1px solid darken($velvet, 15);
     color: #FFF;
@@ -64,7 +64,21 @@ header {
     }
 }
 
-<<<<<<< HEAD
+.hero.visible-xs {
+    @extend .hero;
+    color: #000;
+    padding: 30px;
+    h3 {
+        @include mpreset();
+        color: $velvet;
+        font-size: 2em;
+        letter-spacing: 3px;
+        line-height: 1em;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
 .body {
     padding-top: 25px;
     h3 {
@@ -75,68 +89,8 @@ header {
         letter-spacing: 3px;
         margin-bottom: 15px;
         padding-bottom: 15px;
-=======
-.flipbook-js {
-    text-align: center;
-    max-width: 100%;
-    width: auto;
-    z-index: 100;
-    video { 
-        max-width: 100%;
-    }
-    video::-webkit-media-controls { display:none !important; }
-
-.player-outer {
-    color: #FFF;
-    display: inline-block;
-    font-size: 16px;
-    position: relative;
-    overflow: hidden;
-    &:focus {
-        outline: none;
-    }
-    #loader-wrap {
-        background-color: rgba(#000,0.5);
-        display: block;
-        position: absolute;
-        height: 100%;
-        top: 0;
-        text-align: center;
-        width: 100%;
-        z-index: 30;
-        visibility: visible;
-        span {
-            position: absolute;
-            font-size: 20px;
-            font-weight: bold;
-            display: block;
-            top: 45%;
-            transition: all 0.05s ease-out;
-            text-align: center;
-            width: 100%;
-        }
-    }
-    #big-play-wrap {
-        background-color: transparent;
-        cursor: pointer;
-        display: block;
-        position: absolute;
-        height: 100%;
-        top: 0;
->>>>>>> origin/master
         text-align: center;
     }
-    p {
-        @include mpreset();
-        font-size: 1em;
-        font-weight: 300;
-        line-height: 1.5em;
-        margin: 0 0 1em 0;
-    }
-    ul {
-        font-weight: 300;
-    }
-<<<<<<< HEAD
     ul#shortcuts li {
         margin-bottom: 1em;
     }
@@ -149,188 +103,20 @@ header {
         min-width: 50px;
         padding: .25em 1em;
         text-align: center;
-=======
-    .player-gradient {
-        background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.65) 40%, #000000 100%);
-        bottom: 0;
-        height: 15%;
-        width: 100%;
-        position: absolute;
-        z-index: 10;
     }
-    .controls-outer {
-        // background: rgba(0,0,0,0.8);
-        color: #FFF;
-        bottom: 0px;
-        display: block;
-        //height: 10%;
-        left: 0%;
-        position: absolute;
-        transition: bottom 0.15s ease;
-        width: 100%;
-        //padding: 1.5% 3%;
-        z-index: 20;
-        .controls-inner {
-            color: #FFF;
-            padding: 1.25% 1.5%;
-            position: relative;
-            width: 100%;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            .left, .center, .right {
-                display: inline-block;
-                height: auto;
-                width: 33.33%;
-            }
-            .left {
-                float: left;
-                text-align: left;
-            }
-            .center {
-                margin: 0 auto;
-                text-align: center;
-                width: 33%;
-            }
-            .right {
-                float: right;
-                text-align: right;
-                width: 33%;
-            }
-        }
-        .progress-outer {
-            cursor: pointer;
-            height: 20px;
-            position: relative;
-            z-index: 25;
-            progress[value]::-webkit-progress-value { background-color: rgba(255,255,255,0.90); border-right: 1px solid rgba(0,0,0,0.25); }
-            progress[value]::-webkit-progress-bar { background-color: rgba(255,255,255,0.25); }
-            .progress-hover {
-                background: rgba(0,0,0,0.60);
-                border-radius: 5px;
-                color: #FFF;
-                display: block;
-                font-family: monospace;
-                font-size: 0.8em;
-                font-weight: normal;
-                padding: 0.5% 1%;
-                position: absolute;
-                bottom: 100%;
-                left: 0%;
-                z-index: 30;
-                visibility: hidden;
-            }
-            .progress-left {
-                @extend .progress-hover;
-                background-color: transparent;
-                color: #000;
-                left: 0;
-                bottom: 0;
-                visibility: visible;
-            }
-            .progress-bar {
-                background-color: rgba(255,255,255,0.25);
-                bottom: 0;
-                display: block;
-                position: absolute;
-                height: 3px;
-                width: 100%;
-                transition: height 35ms ease-out;
-                .play-progress {
-                    background-color: rgba(255,255,255,0.90);
-                    display: inline-block;
-                    height: 100%;
-                    width: 0%;
-                }
-            }
-            .keyframes-outer {
-                bottom: 0;
-                display: block;
-                height: 5px;
-                position: absolute;
-                z-index: 30;
-                width: 100%;
-                div {
-                    background-color: #000;
-                    bottom: 0;
-                    display: block;
-                    height: 3px;
-                    position: absolute;
-                    width: 2px;
-                }
-            }
-            &:hover {
-                .progress-bar {
-                    background-color: rgba(255,255,255,0.50);
-                    border-top: 1px solid rgba(0,0,0,0.25);
-                    height: 10px;
-                    .play-progress {
-                        background: #FFF;
-                        border-right: 1px solid rgba(0,0,0,0.50);
-                    }
-                }
-                .keyframes-outer {
-                    height: 15px;
-                    div {
-                        height: 15px;
-                        &::before {
-                            background-color: #000;
-                            content: "";
-                            display: n;
-                            height: 5px;
-                            width: 10px;
-                            left: 0;
-                            top: -5px;
-                            position: absolute;
-                        }
-                    }
-                }
-            }
-        }
-        &.active {
-            bottom: 0;
-        }
-    }
-    .btn {
+    p {
         @include mpreset();
-        background-color: transparent;
-        border: none;
-        display: inline-block;
-        color: #FFF;
-        margin: 0 5px;
-        outline: 0;
-        transition: all 0.05s ease-out;
-        vertical-align: middle;
-        visibility: visible;
-        &:first-child { margin-left: 0; }
-        &:last-child { margin-right: 0; }
-        &:hover {
-            transform: scale(1.1);
-            // &#more { transform: scale(1); }
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.5em;
+        margin: 0 0 1em 0;
+    }
+    ul#features {
+        font-weight: 300;
+        li {
+            margin-bottom: 1em;
+            padding-left: 0.25em;
         }
-        &:active {
-            opacity: 0.75;
-            transform: scale(0.95);
-        }
-        &.inactive {
-            opacity: 0.5;
-        }
-        &:focus {
-            outline: 0;
-        }
-        svg {
-            alignment-baseline: middle;
-            fill: currentColor;
-            height: 17px;
-        }
-        &#loop {
-            transition: all 300ms ease-out;
-            &:active {
-                opacity: 0.75;
-                transform: rotate(-180deg) scale(0.95);
-            }
-        }
->>>>>>> origin/master
     }
 }
 
@@ -350,11 +136,21 @@ header {
             color: $velvet;
         }
     }
-    .left {
-        margin-right: 3em;
-    }
     i.fa {
         border-bottom: 0;
         margin-right: 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .col-xs-12 {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .footer {
+        .text-left, .text-right { text-align: center; }
+        .col-xs-12 { margin-bottom: 15px; }
     }
 }
