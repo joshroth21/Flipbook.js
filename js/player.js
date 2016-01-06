@@ -271,7 +271,8 @@ if (supportsVideo) {
  	       keyBackward();
 	    } else if (event.keyCode === 76) {
 	    	// L key
-	    	jogForward();
+	    	// jogForward();
+	    	toggleLoop();
 	    } else if (event.keyCode === 70 || event.keyCode === 191) {
 	    	// F key, / key
 				addKeyFrame();
