@@ -1,7 +1,5 @@
 $velvet: #E61827;
 $gray: #BFBDB6;
-@import '/bower_components/bootstrap/dist/css/bootstrap.min.css';
-@import '/bower_components/font-awesome/css/font-awesome.min.css';
 @import 'player';
 
 @mixin mpreset() {
